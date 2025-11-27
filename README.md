@@ -11,7 +11,7 @@ En mi sistema he intentado que todo funcione de manera fluida y sin bloqueos, so
 
 Las interrupciones las utilizo en los dos botones: el botón principal y el del joystick.
 El motivo es sencillo: no quiero perder pulsaciones ni depender de estar preguntando en cada loop si el usuario ha presionado algo. Las interrupciones me garantizan que, en el instante en que se pulsa el botón, el programa lo detecta aunque esté ejecutando otra cosa.
-Además, dentro de las interrupciones hago un pequeño “debounce” usando `millis()`, para evitar lecturas falsas.
+Además, dentro de las interrupciones hago un pequeño "debounce" (quitar rebote) usando `millis()`, para evitar lecturas falsas.
 
 Con eso, cuando se pulsa un botón, simplemente marco flags (`buttonPressed`, `buttonReleased`, `joystickButtonPressed`) y luego el loop principal es el que decide qué hacer.
 
